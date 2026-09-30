@@ -1,0 +1,11 @@
+{
+  "installed_at": "2026-09-20T02:46:59",
+  "trigger": "rollback: daylight plate detection regression",
+  "source_weights": "C:\\Users\\user\\vehicle_theft_detection\\models\\backups\\license_plate_20260920_020833.pt",
+  "installed_weights": "C:\\Users\\user\\vehicle_theft_detection\\models\\license_plate.pt",
+  "backup_weights": "C:\\Users\\user\\vehicle_theft_detection\\models\\backups\\license_plate_20260920_024658.pt",
+  "source_hash": "1ad3753f7281a0c29034937198d93acb0df6ccf61733dce465354ef5c9dfd4b2",
+  "installed_hash": "1ad3753f7281a0c29034937198d93acb0df6ccf61733dce465354ef5c9dfd4b2",
+  "backup_hash": "1f8c066cb974e9248e2669d7285526c625a8bd3a2e8276f66ee92e2b2ddcf977",
+  "metadata": {}
+}

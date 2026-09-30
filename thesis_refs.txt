@@ -1,0 +1,79 @@
+REFERENCES
+549: REFERENCES
+550: Agarwal, B., & Mittal, N. (2015). Sentiment analysis using ConceptNet ontology and context information. Prominent Feature Extraction for Sentiment Analysis, 1, 63–75.
+551: Arel-Bundock, V., & Poirier, S. (2020). Machine learning for financial sentiment analysis: Lexicon-based vs. statistical approaches. Journal of Financial Data Science, 2(2), 34–49.
+552: Baker, M., & Wurgler, J. (2007). Investor sentiment in the stock market. Journal of Economic Perspectives, 21(2), 129–151.
+553: Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of Computational Science, 2(1), 1–8.
+554: Cambria, E., Schuller, B., & Liu, B. (2020). Sentiment analysis: An overview of current research and applications. Springer.
+555: Chen, T., Zhang, Y., Yu, G., Zhang, D., Zeng, L., He, Q., & Ao, X. (2024). EFSA: Towards event-level financial sentiment analysis. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (pp. 7455–7467).
+556: Cheng, K. W. (2020). Enhancing financial sentiment analysis with bidirectional LSTM. Journal of Financial Data Science, 2(3), 24–36.
+557: d'Aquin, M., & Noy, N. F. (2012). Where to publish and find ontologies? A survey of ontology libraries. Journal of Web Semantics, 11, 68–75.
+558: Das, S. R., & Chen, M. Y. (2007). Yahoo! for amazon: Sentiment extraction from small talk on the web. Management Science, 53(9), 1375–1388.
+559: Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT 2019 (pp. 4171–4186).
+560: Doshi-Velez, F., & Kim, B. (2017). Towards a rigorous science of interpretable machine learning. arXiv preprint arXiv:1702.08608.
+561: Du, K., Xing, F., Mao, R., & Cambria, E. (2024). Financial sentiment analysis: Techniques and applications. ACM Computing Surveys, 56(9), 1–42.
+562: K. Du, F. Xing, R. Mao, and E. Cambria, "Financial sentiment analysis: Techniques and applications," ACM Computing Surveys, vol. 56, no. 9, pp. 1-42, 2024.
+563: B. Pang and L. Lee, "Opinion mining and sentiment analysis," Foundations and Trends in Information Retrieval, vol. 2, pp. 1-135, 2008.
+564: B. Liu, "Sentiment analysis and opinion mining," Synthesis Lectures on Human Language Technologies, vol. 5, no. 1, pp. 1-167, 2012.
+565: T. Loughran and B. McDonald, "When is a liability not a liability? Textual analysis, dictionaries, and 10-Ks," Journal of Finance, vol. 66, no. 1, pp. 35-65, 2011.
+566: Fatouros, G., Soldatos, J., Kouroumali, K., Makridis, G., & Kyriazis, D. (2023). Transforming sentiment analysis in the financial domain with ChatGPT. Machine Learning with Applications, 14, 100508.
+567: Fernandez-Lopez, M., Gomez-Perez, A., & Juristo Juzgado, N. (1997). METHONTOLOGY: From ontological art towards ontological engineering. In AAAI Spring Symposium Series (pp. 33–40).
+568: Garcia, D. (2013). Sentiment during recessions. Journal of Finance, 68(3), 1267–1300.
+569: García-Serrano, A., Lucio-Arias, D., & Vilares, J. (2015). Scalability issues in sentiment analysis of scientific literature. Scientometrics, 105(3), 1577–1590.
+570: Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT Press.
+571: Gruber, T. R. (1993). A translation approach to portable ontology specifications. Knowledge Acquisition, 5(2), 199–220.
+572: Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation, 9(8), 1735–1780.
+573: Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., & Amodei, D. (2023). CrudeBERT: Pre-training a domain-specific BERT model for crude oil event detection. Journal of Financial Data Science, 112–130.
+574: Kaplan, H., Mundani, R. P., Rölke, H., & Weichselbraun, A. (2023). CrudeBERT: Applying economic theory towards fine-tuning transformer-based sentiment analysis models to the crude oil market. arXiv preprint arXiv:2305.06140.
+575: Kaplan, H., Mundani, R. P., Rölke, H., Weichselbraun, A., & Tschudy, M. (2024). Unifying economic and language models for enhanced sentiment analysis of the oil market. Lecture Notes in Business Information Processing, 518.
+576: Karanikola, A., Davrazos, G., Liapis, C. M., & Kotsiantis, S. (2023). Financial sentiment analysis: Classic methods vs. deep learning models. Intelligent Decision Technologies, 17(4), 893–915.
+577: Kim, J., Kim, H. S., & Choi, S. Y. (2023). Forecasting the S&P 500 Index using mathematical-based sentiment analysis and deep learning models: A FinBERT transformer model and LSTM. Axioms, 12(9), 835.
+578: Liu, B. (2012). Sentiment analysis and opinion mining. Synthesis Lectures on Human Language Technologies, 5(1), 1–167.
+579: Loughran, T., & McDonald, B. (2011). When is a liability not a liability? Textual analysis, dictionaries, and 10-Ks. Journal of Finance, 66(1), 35–65.
+580: Maas, A. L., Daly, R. E., Pham, P. T., Huang, D., Ng, A. Y., & Potts, C. (2011). Learning word vectors for sentiment analysis. In Proceedings of ACL-HLT 2011 (pp. 142–150).
+581: Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014). Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology, 65(4), 782–796.
+582: Nassirtoussi, A. K., Aghabozorgi, S., Wah, T. Y., & Ngo, D. C. L. (2014). Text mining for market prediction: A systematic review. Expert Systems with Applications, 41(16), 7653–7670.
+583: Noy, N. F., & McGuinness, D. L. (2001). Ontology development 101: A guide to creating your first ontology. Stanford Knowledge Systems Laboratory.
+584: Oliveira, N., Cortez, P., & Areal, N. (2017). The impact of news on stock prices: A sentiment analysis approach. Expert Systems with Applications, 79, 145–157.
+585: Pang, B., & Lee, L. (2008). Opinion mining and sentiment analysis. Foundations and Trends in Information Retrieval, 2, 1–135.
+586: Raissi, N., & Missaoui, S. (2015). Role of investor sentiment in financial markets: An explanation by behavioural finance approach. Journal of Behavioral Finance, 5(4), 362–401.
+587: Salas-Zarate, M. del P., Valencia-Garcia, R., Ruiz-Martínez, A., & Colomo Palacios, R. (2017). Feature-based opinion mining in financial news: An ontology driven approach. Journal of Information Science, 43(4), 458–479.
+588: Schlichtkrull, M., Kipf, T. N., Bloem, P., van den Berg, R., Titov, I., & Welling, M. (2018). Modeling relational data with graph convolutional networks. In European Semantic Web Conference (pp. 593–607).
+589: Schouten, K., & Frasincar, F. (2015). Survey on aspect-level sentiment analysis. IEEE Transactions on Knowledge and Data Engineering, 28(3), 813–830.
+590: Schouten, K., & Frasincar, F. (2018). Ontology-driven sentiment analysis of product and service aspects. IEEE Transactions on Knowledge and Data Engineering, 1–12.
+591: Schouten, K., Frasincar, F., & de Jong, F. (2017). COMMIT at SemEval-2017 Task 5: Ontology-based method for sentiment analysis of financial headlines. In Proceedings of the 11th International Workshop on Semantic Evaluation (pp. 883–887).
+592: Sharma, N., Soni, M., Kumar, S., Kumar, R., Deb, N., & Shrivastava, A. (2023). Supervised machine learning method for ontology-based financial decisions in the stock market. ACM Transactions on Asian and Low-Resource Language Information Processing, 22(5), 1–24.
+593: Stepišnik-Perdih, T., Pelicon, A., Škrlj, B., Žnidaršič, M., Lončarski, I., & Pollak, S. (2022). Sentiment classification by incorporating background knowledge from financial ontologies. In Proceedings of the 4th Financial Narrative Processing Workshop (pp. 17–26).
+594: Storey, V. C., & Park, E. H. (2022). An ontology of emotion process to support sentiment analysis. Journal of the Association for Information Systems, 23(4), 999–1036.
+595: Yekrangi, M., & Abdolvand, N. (2020). Financial markets sentiment analysis: Developing a specialized lexicon. Journal of Intelligent Information Systems, 55(3), 415–438.
+596: Zhang, X., Mao, R., & Cambria, E. (2024). SenticVec: Toward robust and human-centric neurosymbolic sentiment analysis. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics.
+597: 
+598: LIST OF FIGURES
+599: Figure 3.1: Showing the General Overview of Framework Design
+600: Figure 3.2: The General Overview of Data Acquisition Tiers and Pipelines
+601: Figure 3.3: The Data Pre-Processing Workflow and Outputs Within The Pipeline
+602: Figure 3.4: Temporal Aggregation and Key Events
+603: Figure 3.5: Data Metadata and Textual Characteristics
+604: Figure 3.6: Showing top 20 unigram tokens in titles after stopword removal
+605: Figure 3.7: Thematic Composition of the Dataset
+606: Figure 3.8: Oil Theft Ontology Schema (OWL) Schema
+607: Figure 3.9: Core classes
+608: 
+609: LIST OF TABLES
+610: Table 2.1: Sentiment Indicators and Their Impact on Energy Markets
+611: Table 2.2: Evolution of Sentiment Analysis Models in Financial Markets
+612: Table 2.3: Comparison of Ontology Engineering Methodologies
+613: Table 2.4: OQuaRE Quality Metrics for Financial Sentiment Ontologies
+614: Table 2.5: Neuro-Symbolic AI Architectures for Energy Sentiment Analysis
+615: Table 2.6: Primary Data Sources for Oil Theft-Related Financial Sentiment Analysis
+616: Table 2.7: Adaptable Public Datasets for Oil Theft Sentiment Analysis
+617: Table 2.8: Composition of Oil Theft Sentiment Dataset (2020-2024)
+618: Table 2.9: Proposed Benchmark Datasets for Comparative Analysis
+619: Table 3.1: Source Metadata and Textual Characteristics
+620: Table 3.2: Oil Theft Ontology Schema (OWL)
+621: 
+622: LIST OF EQUATIONS
+623: Equation (3.1): Cosine Similarity for Semantic Relevance
+624: 
+625: 
+626: 

@@ -1,0 +1,8 @@
+image,group_id,condition,plate_text,source_name
+raw/nigeria/day/sequence01_frame001.jpg,sequence01,day,LAG123XY,nigeria-local
+raw/nigeria/night/sequence02_frame001.jpg,sequence02,night,ABJ456CD,nigeria-local
+raw/nigeria/rain/sequence03_frame001.jpg,sequence03,rain,KJA789EF,nigeria-local
+raw/nigeria/blur/sequence04_frame001.jpg,sequence04,blur,ENU234GH,nigeria-local
+raw/nigeria/dirt/sequence05_frame001.jpg,sequence05,dirt,PHC567JK,nigeria-local
+raw/nigeria/angle/sequence06_frame001.jpg,sequence06,angle,IBA890LM,nigeria-local
+raw/nigeria/occlusion/sequence07_frame001.jpg,sequence07,occlusion,BEN345NP,nigeria-local

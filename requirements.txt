@@ -1,0 +1,65 @@
+# =============================================================================
+#  Vehicle Theft Detection Framework - Python dependencies
+# =============================================================================
+#  IMPORTANT: use Python 3.10 - 3.12.  PyTorch / Ultralytics wheels are not yet
+#  published for Python 3.14, so `pip install torch` will fail there.
+#
+#      py -3.12 -m venv .venv
+#      .venv\Scripts\activate
+#      pip install -r requirements.txt
+# =============================================================================
+
+# ---- Web / API layer --------------------------------------------------------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20          # file uploads (vehicle & face images)
+pydantic==2.10.4
+pydantic-settings==2.7.1
+email-validator==2.2.0            # required by Pydantic EmailStr schemas
+
+# ---- Database ---------------------------------------------------------------
+SQLAlchemy==2.0.36                # SQLite ORM (prototype DB)
+
+# ---- Security / auth --------------------------------------------------------
+bcrypt==4.2.1                     # password hashing
+PyJWT==2.10.1                     # JWT access tokens
+
+# ---- Computer vision core ---------------------------------------------------
+opencv-python==4.10.0.84
+numpy>=1.26.4,<2.3.0                    # <2.0 keeps torch/easyocr happy
+Pillow==11.0.0
+
+# ---- Deep learning / detection ---------------------------------------------
+# CPU wheels by default. For NVIDIA GPU install torch from the CUDA index first:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1
+torchvision==0.20.1
+ultralytics==8.3.55               # YOLOv8 / YOLO11
+
+# ---- OCR (license plate character recognition) -----------------------------
+easyocr==1.7.2
+# Alternative OCR backend, auto-detected if EasyOCR is unavailable:
+# paddlepaddle==2.6.2
+# paddleocr==2.9.1
+# pytesseract==0.3.13             # also needs the Tesseract binary installed
+
+# ---- Face recognition -------------------------------------------------------
+deepface==0.0.93                  # wraps FaceNet / ArcFace / VGG-Face
+tf-keras==2.18.0                  # required by DeepFace on TensorFlow >= 2.16
+
+# ---- Alerting ---------------------------------------------------------------
+twilio==9.4.1                     # SMS
+# email uses Python's stdlib smtplib - no extra package needed
+
+# ---- Utilities --------------------------------------------------------------
+python-dotenv==1.0.1
+matplotlib==3.9.4                 # training performance graphs
+pandas==2.2.3                     # metrics tables
+scikit-learn==1.6.0               # precision / recall / F1 / confusion matrix
+PyYAML==6.0.2
+requests==2.32.3
+inference-sdk==0.53.0
+
+# ---- Testing ----------------------------------------------------------------
+pytest==8.3.4
+httpx==0.28.1                     # FastAPI TestClient transport

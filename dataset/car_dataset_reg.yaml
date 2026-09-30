@@ -1,0 +1,9 @@
+# Separate Roboflow LPD v1 dataset for license-plate detector training.
+# Source: https://universe.roboflow.com/muhammad-najib-sulaiman/lpd-pfzpe/dataset/1
+path: C:/Users/user/Downloads/car_dataset_reg
+train: train/images
+val: valid/images
+test: test/images
+nc: 1
+names:
+  0: license_plate

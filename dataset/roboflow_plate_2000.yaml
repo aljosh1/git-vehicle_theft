@@ -1,0 +1,7 @@
+path: C:/Users/user/vehicle_theft_detection/dataset/raw/roboflow/License Plate.v3i.yolov8
+train: C:/Users/user/vehicle_theft_detection/dataset/splits/train_2000.txt
+val: valid/images
+test: test/images
+nc: 1
+names:
+  0: license_plate

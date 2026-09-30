@@ -1,0 +1,112 @@
+# =============================================================================
+#  Secrets - NEVER commit these
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets/
+credentials.json
+
+# =============================================================================
+#  Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+ENV/
+
+# Testing / coverage / type checking
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+
+# =============================================================================
+#  Runtime data - DB, uploaded videos, captured evidence, face images
+# =============================================================================
+data/
+!data/.gitkeep
+
+# Application logs
+logs/
+*.log
+*.log.*
+
+# =============================================================================
+#  Model weights - far too large for Git
+# =============================================================================
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.engine
+models/*.tflite
+models/*.bin
+models/backups/
+models/install_receipts/
+!models/README.md
+
+# =============================================================================
+#  Datasets & training artefacts
+# =============================================================================
+runs/
+training/outputs/
+dataset/raw/
+dataset/annotations/
+dataset/images/
+dataset/labels/
+dataset/sources/
+*.zip
+*.tar.gz
+!documentation/*.zip
+
+# =============================================================================
+#  Node / frontend
+# =============================================================================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+npm-debug.log*
+yarn-error.log*
+.vite/
+
+# =============================================================================
+#  Docker
+# =============================================================================
+.docker/
+docker-data/
+
+# =============================================================================
+#  Editors / OS / IDE
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db

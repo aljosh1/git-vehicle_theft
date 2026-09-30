@@ -1,0 +1,9 @@
+# Fixed-split Roboflow License Plate v3 dataset.
+# The source export is preserved under dataset/raw/roboflow and is not copied or re-split.
+path: C:/Users/user/vehicle_theft_detection/dataset/raw/roboflow/License Plate.v3i.yolov8
+train: train/images
+val: valid/images
+test: test/images
+nc: 1
+names:
+  0: license_plate

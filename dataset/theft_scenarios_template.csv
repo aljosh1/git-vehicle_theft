@@ -1,0 +1,5 @@
+sample_id,image,expected_stolen,split,condition
+stolen-day-001,scenarios/stolen-day-001.jpg,true,test,day
+not-stolen-day-001,scenarios/not-stolen-day-001.jpg,false,test,day
+stolen-night-001,scenarios/stolen-night-001.jpg,true,test,night
+not-stolen-night-001,scenarios/not-stolen-night-001.jpg,false,test,night
