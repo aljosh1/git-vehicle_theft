@@ -10,6 +10,28 @@
 const TOKEN_KEY = 'vtds_token'
 const USER_KEY = 'vtds_user'
 
+/**
+ * Base URL every request is prefixed with.
+ *
+ * Empty by default, which keeps relative URLs (`/api/...`). That is what you
+ * want locally, because `vite.config.js` proxies `/api` and `/media` to the
+ * backend so the browser only ever sees one origin.
+ *
+ * On a static host such as Vercel there is no dev-server proxy, so set
+ * `VITE_API_BASE_URL` (Vercel -> Settings -> Environment Variables, or a
+ * `.env.production` file) to the public origin of the backend, e.g.
+ * `https://api.example.com`. Leave it empty if you rely on the `vercel.json`
+ * rewrites instead.
+ */
+export const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/+$/, '')
+
+/** Prefix a root-relative path with the configured API base. */
+function apiUrl(path) {
+  if (!path) return path
+  if (/^https?:\/\//i.test(path)) return path
+  return `${API_BASE}${path}`
+}
+
 export function getToken() {
   return localStorage.getItem(TOKEN_KEY)
 }
@@ -45,7 +67,7 @@ async function request(path, { method = 'GET', body, isForm = false } = {}) {
   if (token) headers.Authorization = `Bearer ${token}`
   if (body && !isForm) headers['Content-Type'] = 'application/json'
 
-  const response = await fetch(path, {
+  const response = await fetch(apiUrl(path), {
     method,
     headers,
     body: isForm ? body : body ? JSON.stringify(body) : undefined,
@@ -236,13 +258,15 @@ export const api = {
  * `get_user_from_query_token` in backend/api/deps.py.
  */
 export function mjpegUrl(cameraId = 'cam-0') {
-  return `/api/stream/mjpeg?camera_id=${encodeURIComponent(cameraId)}&token=${getToken()}`
+  return apiUrl(
+    `/api/stream/mjpeg?camera_id=${encodeURIComponent(cameraId)}&token=${getToken()}`,
+  )
 }
 
 /** Resolve a stored media path ("evidence/foo.jpg") to a servable URL. */
 export function mediaUrl(path) {
   if (!path) return null
-  return `/media/${path.replace(/^\/+/, '')}`
+  return apiUrl(`/media/${path.replace(/^\/+/, '')}`)
 }
 
 /**
@@ -251,5 +275,5 @@ export function mediaUrl(path) {
  * cannot carry an Authorization header.
  */
 export function authUrl(path) {
-  return `${path}${path.includes('?') ? '&' : '?'}token=${encodeURIComponent(getToken() ?? '')}`
+  return `${apiUrl(path)}${path.includes('?') ? '&' : '?'}token=${encodeURIComponent(getToken() ?? '')}`
 }

@@ -56,6 +56,16 @@ logs/
 # =============================================================================
 #  Model weights - far too large for Git
 # =============================================================================
+# Trained weights are large, so they are excluded by default. The three files the
+# deployed API actually needs are re-included below, because otherwise the Docker
+# image ships without them and detection silently falls back to weaker paths:
+#   *             -> classical OpenCV plate localisation
+#   *    -> no face detection at all
+#   * models/face_recognition_sface.onnx  -> coarse histogram descriptor instead of
+#                                            128-d SFace embeddings
+# yolov8n.pt is deliberately still ignored; Ultralytics downloads it on first use.
+models/license_plate.pt 
+models/face_detection_yunet.onnx 
 models/*.pt
 models/*.pth
 models/*.onnx
@@ -65,6 +75,9 @@ models/*.bin
 models/backups/
 models/install_receipts/
 !models/README.md
+!models/license_plate.pt
+!models/face_detection_yunet.onnx
+!models/face_recognition_sface.onnx
 
 # =============================================================================
 #  Datasets & training artefacts

@@ -1,30 +1,56 @@
+# =============================================================================
+#  Docker build context exclusions.
+#
+#  Docker does NOT read .gitignore - without this file the entire working
+#  directory is uploaded to the builder on every build. That would ship .env
+#  (SECRET_KEY, ADMIN_PASSWORD, Twilio tokens) and the SQLite database in
+#  data/ to Render's build hosts.
+# =============================================================================
+
+# --- secrets & VCS -----------------------------------------------------------
 .git
 .gitignore
-.vscode
-.idea
-__pycache__
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.egg-info
-dist
-build
-.pytest_cache
-.coverage
+.github
 .env
-.env.local
-node_modules
-.next
-.DS_Store
-*.log
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# --- runtime data (recreated by settings.ensure_directories at startup) ------
+data/
 logs/
-.venv
-venv
-.venv312
+*.log
+
+# --- dependencies & caches ---------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.vite/
+
+# --- training artefacts, datasets, docs, tests: not needed to run the API ---
+dataset/
+runs/
+training/outputs/
+documentation/
 tests/
 tools/
-training/
-documentation/
-README.md
+*.zip
+*.tar.gz
 *.md
+
+# --- weights: NOT ignored here.
+# .gitignore re-includes models/license_plate.pt and the two face ONNX files
+# because the container needs them (see Dockerfile.backend). Do not add
+# *.pt / *.onnx to this file, or the deployed API will fall back to the weaker
+# OpenCV / histogram detection paths.

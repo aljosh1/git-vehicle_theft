@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://YOUR-BACKEND-HOST/api/$1" },
+    { "source": "/media/(.*)", "destination": "https://YOUR-BACKEND-HOST/media/$1" }
+  ]
+}

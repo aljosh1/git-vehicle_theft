@@ -16,8 +16,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy entire application
 COPY backend/ ./backend/
+# Weights are git-ignored, so only models/README.md is normally present here.
+# The plate detector falls back to classical OpenCV localisation, and the
+# vehicle detector auto-downloads yolov8n.pt on first use.
 COPY models/ ./models/
 COPY conftest.py .
+# .env.example documents every supported setting for platforms that inject
+# configuration from their own dashboard (Render, Railway, Fly, ...).
+COPY .env.example ./.env.example
 
 # Create data directories
 RUN mkdir -p data/uploads data/evidence data/faces data/vehicles logs
@@ -29,5 +35,11 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:8000/health', timeout=5)"
 
-# Run backend
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run backend.
+#
+# Render (and most PaaS providers) route traffic to $PORT and inject it at build
+# time, so honour the variable and fall back to 8000 for local runs. Using the
+# shell form is required here precisely because of the expansion.
+# One worker only: the detection pipeline holds in-process camera state and
+# uploaded evidence on local disk, so multiple workers would drift apart.
+CMD ["sh", "-c", "exec uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1"]

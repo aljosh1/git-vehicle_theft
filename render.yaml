@@ -1,0 +1,116 @@
+# =============================================================================
+#  Render blueprint - lets the dashboard be deployed straight from the repo by
+#  clicking "New -> Blueprint" in the Render dashboard and pointing it at this
+#  repository. Everything is defined as a variable, so no dashboard clicking is
+#  required beyond supplying secrets.
+#
+#  Docs: https://render.com/docs/blueprint-spec
+# =============================================================================
+
+databases:
+  # Only used when DATABASE_URL is a Postgres URL. The free Postgres instance
+  # expires after 30 days; a managed external database (Neon, Supabase) is
+  # recommended for anything you care about keeping.
+  - name: vtds-db
+    plan: free
+    databaseName: vehicle_theft_db
+    user: vtds_user
+    # ipAllowList: []  # Render's default only permits Render's own egress
+    #                  # addresses. Add your laptop's public IP if you need a
+    #                  # GUI client to connect.
+
+services:
+  - type: web
+    name: vtds-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    dockerContext: .
+    plan: starter          # see the note on plan choice below
+    region: oregon
+    # ------------------------------------------------------------------------
+    #  Model weights
+    #
+    #  `models/*.pt` and `models/*.onnx` are git-ignored, so the image ships
+    #  without them:
+    #    * vehicle detection - Ultralytics downloads yolov8n.pt on first use
+    #    * plate detection   - falls back to classical OpenCV localisation
+    #    * face recognition  - DeepFace caches weights in ~/.deepface on first
+    #                          use (~90 MB download)
+    #
+    #  To ship your fine-tuned license_plate.pt, upload it once via the render
+    #  shell (` ls -la models/`) and use the "Shell" tab, or better, bake it
+    #  into the image from a private object store in a build step.
+    # ------------------------------------------------------------------------
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+
+      # --- required secrets: fill these in the dashboard --------------------
+      - key: SECRET_KEY
+        sync: false        # generateRandom: true
+      - key: ADMIN_PASSWORD
+        sync: false
+
+      # --- database ---------------------------------------------------------
+      # Leave the SQLite default while testing. To use the Postgres instance
+      # defined above, switch to:
+      #   fromDatabase:
+      #     name: vtds-db
+      #     property: connectionString
+      - key: DATABASE_URL
+        value: sqlite:////app/data/vtds.db
+
+      # --- browser origins allowed to call this API --------------------------
+      # Must list the EXACT Vercel origin, no trailing slash. Vercel preview
+      # deployments each get their own subdomain, so either add them as they
+      # appear or use "*" (acceptable only because the API is JWT-authenticated
+      # and never uses cookies).
+      - key: CORS_ORIGINS
+        sync: false
+
+      # --- alerting (optional: leave blank to disable) -----------------------
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USE_TLS
+        value: "true"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: ALERT_EMAIL_FROM
+        sync: false
+      - key: ALERT_EMAIL_TO
+        sync: false
+      - key: ALERTS_EMAIL_ENABLED
+        value: "false"
+      - key: ALERTS_SMS_ENABLED
+        value: "false"
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: ALERT_SMS_TO
+        sync: false
+
+      # --- hosted plate detection (optional) --------------------------------
+      # Set PLATE_DETECTOR_BACKEND=roboflow to use a hosted model instead of
+      # the local one, which keeps the image small and the inference fast.
+      - key: ROBOFLOW_API_KEY
+        sync: false
+      - key: ROBOFLOW_MODEL_ID
+        value: vehicle-license-plate-1hdcy/1
+      - key: ROBOFLOW_API_URL
+        value: https://serverless.roboflow.com
+      - key: PLATE_DETECTOR_BACKEND
+        value: auto
+
+      - key: DEVICE
+        value: cpu
+      - key: DEBUG
+        value: "false"
